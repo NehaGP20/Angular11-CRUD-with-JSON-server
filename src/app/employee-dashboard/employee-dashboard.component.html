@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Employee Details</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <button (click)="clickAddEmployee()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employees</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <table class="table mt-3">
+      <thead>
+          <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">Employee Name</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email ID</th>
+            <th scope="col">City</th>
+            <th scope="col">Hobbies</th>
+            <th scope="col">Skills</th>
+            <th scope="col">Action</th>
+          </tr>    
+      </thead>
+
+      <tbody>
+          <tr *ngFor="let row of employeeData" >
+              <td> {{row.id}} </td>
+              <td> {{row.ename}} </td>
+              <td> {{row.ephone}} </td>
+              <td> {{row.eemail}} </td>
+              <td> {{row.ecity}} </td>
+              <td> {{row.ehobbies}} </td>
+              <td> {{row.eskills}} </td>
+              <td>
+                  <button (click)="onEdit(row)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-info">Edit</button>
+                  <button (click)="deleteEmployee(row)" class="btn btn-danger mx-3">Delete</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+
+  <!-- Button trigger modal
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            <form [formGroup]="formValue">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"> Employee Name </label>
+                  <input type="text" formControlName="ename" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"> Phone No </label>
+                  <input type="text" formControlName="ephone" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"> Email ID </label>
+                    <input type="email" formControlName="eemail" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"> City </label>
+                    <input type="text" formControlName="ecity" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"> Hobbies </label>
+                    <input type="text" formControlName="ehobbies" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"> Skills </label>
+                    <input type="text" formControlName="eskills" class="form-control" id="exampleInputPassword1">
+                  </div>
+              </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" id = "cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" *ngIf = "showAdd" (click) = "postEmployeeDetails()" class="btn btn-primary">Add</button>
+          <button type="button" *ngIf = "showUpdate" (click) = "updateEmployeeDetails()" class="btn btn-primary">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>

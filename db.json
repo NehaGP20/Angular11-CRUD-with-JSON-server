@@ -1,0 +1,53 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "ename": "Neha GP",
+      "ephone": "7892236692",
+      "eemail": "neha@gmail.com",
+      "ecity": "Bangalore",
+      "ehobbies": "Dancing",
+      "eskills": "Java"
+    },
+    {
+      "id": 2,
+      "ename": "Prateek Ashok",
+      "ephone": "8765432187",
+      "eemail": "pratz@gmail.com",
+      "ecity": "Bangalore",
+      "ehobbies": "Games",
+      "eskills": "Network Security "
+    },
+    {
+      "id": 3,
+      "ename": "Anjana MN",
+      "ephone": "8765432198",
+      "eemail": "anju@gmail.com",
+      "ecity": "Bangalore",
+      "ehobbies": "Korean Serials",
+      "eskills": "UI/UX"
+    },
+    {
+      "id": 4,
+      "ename": "Lekhana",
+      "ephone": "8769876546",
+      "eemail": "lekha@gmail.com",
+      "ecity": "Bangalore",
+      "ehobbies": "Anime Series",
+      "eskills": "HTML/CSS"
+    },
+    {
+      "id": 5,
+      "ename": "Farhan",
+      "ephone": "7654328753",
+      "eemail": "fahan@gmail.com",
+      "ecity": "Munger",
+      "ehobbies": "Web series",
+      "eskills": "Web developer"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
